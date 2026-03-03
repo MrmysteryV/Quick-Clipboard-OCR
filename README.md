@@ -11,6 +11,12 @@ A lightweight python program that extracts text from images stored in your clipb
 | macOS   | ✅ Yes     | Requires Tesseract installed via Homebrew                      |
 | Linux   | ⚠ Partial | Clipboard image support may depend on your desktop environment |
 
+MacOS :
+System Settings → Privacy & Security → Accessibility → Allow Terminal / Python to monitor keyboard input.
+
+Linux:
+Should work well on X11, but may not work on Wayland (depends on distro/security policy).
+
 ## Python Version
 
 * Tested with: **Python 3.12**
@@ -31,6 +37,7 @@ Tesseract must be installed separately.
 ### macOS
 
 ```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install tesseract
 ```
 
@@ -54,7 +61,7 @@ cd Quick-Clipboard-OCR
 ## 3. Install Python Dependencies
 
 ```bash
-pip install -r requirements.txt
+python3.12 -m pip install -r requirements.txt
 ```
 
 ### Windows
@@ -79,7 +86,7 @@ custom_path = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
 
 **MacOS / Linux**
 ```bash
-python main.py
+python3.12 main.py
 ```
 **Windows**
 ```bash
@@ -103,7 +110,7 @@ pause
 SCRIPT="main.py"
 
 if [ -f "$SCRIPT" ]; then
-    python "$SCRIPT"
+    python3.12 "$SCRIPT"
 else
     echo "⚠️ '$SCRIPT' not found in this directory."
 fi
