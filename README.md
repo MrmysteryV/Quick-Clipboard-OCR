@@ -51,25 +51,7 @@ cd Quick-Clipboard-OCR
 
 ---
 
-## 3. Create a Virtual Environment (Recommended but not necessary)
-
-### Windows
-
-```bash
-python -version(e.g 3.12) -m venv venv
-venv\Scripts\activate
-```
-
-### macOS / Linux
-
-```bash
-python3 -version(e.g 3.12) -m venv venv
-source venv/bin/activate
-```
-
----
-
-## 4. Install Python Dependencies
+## 3. Install Python Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -83,35 +65,29 @@ py -version(e.g 3.12) -m pip install -r requirements.txt
 
 ---
 
-## 5. (Optional) Specify Custom Tesseract Path
+## 4. Specify Custom Tesseract Path
 
-If Tesseract is not in your system `PATH`, set an environment variable:
-
-### Windows
-
-```bash
-set TESSERACT_PATH=C:\Path\To\tesseract.exe
+Go into **main.py** and replace the default tesseract path with your one (on windows the default should be C:/Program Files/Tesseract-OCR/tesseract.exe):
+```python
+custom_path = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
 ```
-
-### macOS / Linux
-
-```bash
-export TESSERACT_PATH=/usr/local/bin/tesseract
-```
-
 ---
 
 # How to Use
 
 ## Start the Application
 
+**MacOS / Linux**
 ```bash
 python main.py
+```
+**Windows**
+```bash
+py -version(e.g 3.12) main.py
 ```
 You could also make a .bat file (on windows) in the same directory and create a shortcut to that file for easy access:
 ```bash
 @echo off
-call venv\Scripts\activate
 set SCRIPT=main.py
 
 if exist "%~dp0%SCRIPT%" (
@@ -122,21 +98,11 @@ if exist "%~dp0%SCRIPT%" (
 
 pause
 ```
-```bash
 **Or a macOS / Linux shell script (.sh)**
-
+```bash
 SCRIPT="main.py"
 
-if [ -d "venv" ]; then
-    source venv/bin/activate
-else
-    echo "⚠️ Virtual environment not found. Create it first with:"
-    echo "   python3 -m venv venv"
-    exit 1
-fi
-
 if [ -f "$SCRIPT" ]; then
-    # Run with Python from the virtual environment
     python "$SCRIPT"
 else
     echo "⚠️ '$SCRIPT' not found in this directory."
@@ -150,7 +116,7 @@ fi
 2. Press:
 
 ```
-Ctrl + Shift + V
+Ctrl + Shift + V (you will probably need to press it multiple times before it pastes the text)
 ```
 
 **OR**
@@ -173,8 +139,3 @@ The recognized text will automatically be copied to your clipboard.
 * The clipboard must contain an image (not text).
 * Accuracy depends on image quality and language.
 * Currently configured for English (`eng`) recognition.
-
----
-
-If you encounter issues or would like to contribute improvements, feel free to open a pull request or issue.
-
