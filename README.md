@@ -8,8 +8,8 @@ A lightweight python program that extracts text from images stored in your clipb
 | OS      | Supported | Notes                                                          |
 | ------- | --------- | -------------------------------------------------------------- |
 | Windows | ✅ Yes     | Fully supported                                                |
-| macOS   | ✅ Yes     | Requires Tesseract installed via Homebrew                      |
-| Linux   | ⚠ Partial | Clipboard image support may depend on your desktop environment |
+| macOS   | ⚠ Partial    | Not tested, couldnt get to work yet                     |
+| Linux   | ⚠ Partial | Not tested, couldnt get to work yet |
 
 MacOS :
 System Settings → Privacy & Security → Accessibility → Allow Terminal / Python to monitor keyboard input.
