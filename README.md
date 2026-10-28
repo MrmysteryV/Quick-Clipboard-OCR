@@ -146,3 +146,9 @@ The recognized text will automatically be copied to your clipboard.
 * The clipboard must contain an image (not text).
 * Accuracy depends on image quality and language.
 * Currently configured for English (`eng`) recognition.
+
+---
+
+### Transparency notice
+
+This project was used generative AI to streamline development. I believe in transparent use of these tools and I have gone through multiple polishing and testing iterations to make sure the final result is up to a good finished standard.
